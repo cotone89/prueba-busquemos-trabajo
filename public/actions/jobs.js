@@ -23,16 +23,30 @@ form.addEventListener('submit', function (event) {
 
 const obtieneJobs = async (data) => {
     try {
-        const resp = await axios.get(`${base_url}description=${data.description}&location=${data.location}&lat=${data.lat}&long=${data.long}&full_time=${data.full_time}`, data);
-        console.log("la url que se esta enviando es-- " + resp);
+
+        const resp = await axios.get(base_url, {
+            params: {
+                description: data.description,
+                location: data.location,
+                lat: data.lat,
+                long: data.long,
+                full_time: data.full_time
+            }
+        })
         if (resp.data) {
             //data exist
-            
+           // window.location.href = '/';
+            $("#results").append("<h2>Resultados de b&uacute;squeda</h2>");
+            $("#results").append("<br/>");
+            $("#results").append("<br/>");
 
-            if (resp.data.length !== 0) { //vanilla JS
-                window.location.href = '/';
 
-            }
+            $.each(resp.data, function (index, value) {
+               let hola = "<table><tr><td>"+value.id+"<td><tr></table >";
+                $("#results").append(hola);
+            });
+
+            //$("#results").append('<table><tr><td>'${resp.data}'<td><tr></table >');
         }
     } catch (e) {
         console.error(e);
