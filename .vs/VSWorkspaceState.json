@@ -5,12 +5,11 @@
     "\\models",
     "\\public",
     "\\public\\actions",
+    "\\public\\stylesheets",
     "\\routes",
     "\\semantic",
-    "\\semantic\\src\\definitions",
-    "\\semantic\\src\\definitions\\behaviors",
-    "\\semantic\\tasks\\build"
+    "\\semantic\\dist"
   ],
-  "SelectedNode": "\\views\\index.ejs",
+  "SelectedNode": "\\public\\actions\\jobs.js",
   "PreviewInSolutionExplorer": false
 }

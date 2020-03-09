@@ -11,61 +11,60 @@
             crossorigin="anonymous"></script>
     <script src="/dist/semantic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
 </head>
   <body>
-      <div class="ui centered grid">
-          <div class="ui two column centered row">
-              <!--<div class="centered column">
-              <h1><%= title %></h1>
-              <p>Bienvenido a <%= title %>: Registra usuarios, ve ofertas de empleo según tus gustos </p>
-            </div>
-            <div class="centered column">
-              <form action="/users/" method="POST" class="ui form" id="new_user" >
-                <div class="ui input">
-                  <input type="text" name="name" placeholder="Ingrese su nombre" id="new-name">
-                </div>
-                <div class="ui input">
-                  <input type="text" name="lastname" placeholder="Ingrese su apellido" id="new-lastname">
-                </div>
-                <div class="ui input">
-                  <input type="email" name="email" placeholder="Ingrese su email" id="new-mail">
-                </div>
-                <div class="ui input">
-                  <input type="password" name="password" placeholder="Ingrese su contraseña" id="new-pass">
-                </div>
-                <button class="ui button" type="submit">Crear usuario</button>
-              </form>
-            </div>-->
+          <div class="container-fluid text-center">
 
-
-              <div class="centered column">
                   <h1><%= title2 %></h1>
-                  <p> Elige el empleo que m&aacute;s te acomode </p>
-              </div>
-              <div class="centered column">
-                  <form action="/jobs/" method="GET" class="ui form" id="search_jobs">
-                      <div class="ui input">
-                          <input type="text" name="descripcion" placeholder="Ingrese Descripción" id="description">
+
+
+                  <div class="form-group">
+                      <label>Selecciona el tipo de b&uacute;squeda:</label>
+                      <select class="form-control" id="tipoBusqueda">
+                          <option id="1">Por descripci&oacute;n</option>
+                          <option id="2">Por lugar de trabajo</option>
+                          <option id="3">Por coordenadas</option>
+                      </select>
+                  </div>
+
+
+                  <form action="/jobs/" method="GET" id="search_jobs">
+
+                      <div id="porDescripcion">
+                          <div class="form-group">
+                              <label>Ingrese descripci&oacute;n</label>
+                              <input type="text" class="form-control" id="description"placeholder="ej: Java">
+                          </div>
                       </div>
-                      <div class="ui input">
-                          <input type="text" name="localizacion" placeholder="Lugar de trabajo" id="location">
+
+                      <div id="porLugar" style="display:none;">
+                          <div class="form-group">
+                              <label>Ingrese lugar de trabajo</label>
+                              <input type="text" class="form-control" id="location" placeholder="ej: Chicago">
+                          </div>
                       </div>
-                      <div class="ui input">
-                          <input type="text" name="latitud" placeholder="Ingrese Latitud" id="lat">
+
+                      <div id="porCoordenadas" style="display:none;">
+                          <div class="form-group">
+                              <label>Ingrese coordenadas</label>
+                              <input type="text" class="form-control" id="lat" placeholder="ej: 1">
+                              <input type="text" class="form-control" id="long" placeholder="ej: 2">
+                          </div>
                       </div>
-                      <div class="ui input">
-                          <input type="text" name="longitud" placeholder="Ingrese Longitud" id="long">
-                      </div>
+
+
                       <div class="ui input">
                           <p>¿Full time?</p>
                           <div class="form-check ml-2">
-                              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                              <input class="form-check-input" type="radio" name="exampleRadios" id="si" value="si" checked>
                               <label class="form-check-label" for="exampleRadios1">
                                   Si
                               </label>
                           </div>
                           <div class="form-check ml-2">
-                              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                              <input class="form-check-input" type="radio" name="exampleRadios" id="no" value="no">
                               <label class="form-check-label" for="exampleRadios2">
                                   No
                               </label>
@@ -73,35 +72,24 @@
                       </div>
 
                       <div>
-                          <button class="ui button mt-3" type="submit">Buscar Empleos</button>
+                          <button type="submit" class="btn btn-primary">Buscar Empleo</button>
                       </div>
                   </form>
-              </div>
+       
 
               <br />
               <br />
 
-              <div id="results"></div>
+
+              <div class="row p-3" id="results">
 
 
-
-
-          </div>
-      </div>
-      <div id="list-users">
-          <div class="ui centered grid">
-              <div class="ui two column centered row">
-                  <div class="column">
-                      <table class="ui centered table" id="users_table">
-                          <thead>
-                          </thead>
-                          <tbody>
-                          </tbody>
-                      </table>
-                  </div>
               </div>
-          </div>
+
       </div>
+
+
+
       <!--Bootstrap JS 4.2.1-->
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
       <script type="module" src="/actions/user.js"></script>

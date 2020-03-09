@@ -12,3 +12,14 @@ a {
   margin-top: 4vh;
   font-size: 18px;
 }
+
+.carta-style {
+    height: 200px;
+}
+.carta-style:hover {
+    box-shadow: 10px 5px 10px black;
+    cursor: pointer;
+}
+.color-li {
+    color: dimgray;
+}
