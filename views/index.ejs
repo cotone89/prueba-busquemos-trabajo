@@ -15,76 +15,78 @@
 
 </head>
   <body>
-          <div class="container-fluid text-center">
+      <div class="container-fluid text-center mt-4">
 
-                  <h1><%= title2 %></h1>
+          <h1><%= title2 %></h1>
 
 
+          <div class="form-group">
+              <label>Selecciona el tipo de b&uacute;squeda:</label>
+              <select class="form-control" id="tipoBusqueda">
+                  <option id="1">Por descripci&oacute;n</option>
+                  <option id="2">Por lugar de trabajo</option>
+                  <option id="3">Por coordenadas</option>
+              </select>
+          </div>
+
+
+          <form action="/jobs/" method="GET" id="search_jobs">
+
+              <div id="porDescripcion">
                   <div class="form-group">
-                      <label>Selecciona el tipo de b&uacute;squeda:</label>
-                      <select class="form-control" id="tipoBusqueda">
-                          <option id="1">Por descripci&oacute;n</option>
-                          <option id="2">Por lugar de trabajo</option>
-                          <option id="3">Por coordenadas</option>
-                      </select>
+                      <label>Ingrese descripci&oacute;n</label>
+                      <input type="text" class="form-control" id="description" placeholder="ej: Java">
                   </div>
-
-
-                  <form action="/jobs/" method="GET" id="search_jobs">
-
-                      <div id="porDescripcion">
-                          <div class="form-group">
-                              <label>Ingrese descripci&oacute;n</label>
-                              <input type="text" class="form-control" id="description"placeholder="ej: Java">
-                          </div>
-                      </div>
-
-                      <div id="porLugar" style="display:none;">
-                          <div class="form-group">
-                              <label>Ingrese lugar de trabajo</label>
-                              <input type="text" class="form-control" id="location" placeholder="ej: Chicago">
-                          </div>
-                      </div>
-
-                      <div id="porCoordenadas" style="display:none;">
-                          <div class="form-group">
-                              <label>Ingrese coordenadas</label>
-                              <input type="text" class="form-control" id="lat" placeholder="ej: 1">
-                              <input type="text" class="form-control" id="long" placeholder="ej: 2">
-                          </div>
-                      </div>
-
-
-                      <div class="ui input">
-                          <p>¿Full time?</p>
-                          <div class="form-check ml-2">
-                              <input class="form-check-input" type="radio" name="exampleRadios" id="si" value="si" checked>
-                              <label class="form-check-label" for="exampleRadios1">
-                                  Si
-                              </label>
-                          </div>
-                          <div class="form-check ml-2">
-                              <input class="form-check-input" type="radio" name="exampleRadios" id="no" value="no">
-                              <label class="form-check-label" for="exampleRadios2">
-                                  No
-                              </label>
-                          </div>
-                      </div>
-
-                      <div>
-                          <button type="submit" class="btn btn-primary">Buscar Empleo</button>
-                      </div>
-                  </form>
-       
-
-              <br />
-              <br />
-
-
-              <div class="row p-3" id="results">
-
-
               </div>
+
+              <div id="porLugar" style="display:none;">
+                  <div class="form-group">
+                      <label>Ingrese lugar de trabajo</label>
+                      <input type="text" class="form-control" id="location" placeholder="ej: Chicago">
+                  </div>
+              </div>
+
+              <div id="porCoordenadas" style="display:none;">
+                  <div class="form-group">
+                      <label>Ingrese coordenadas</label>
+                      <input type="text" class="form-control" id="lat" placeholder="ej: 1">
+                      <input type="text" class="form-control" id="long" placeholder="ej: 2">
+                  </div>
+              </div>
+
+
+              <div class="ui input">
+                  <p>¿Full time?</p>
+                  <div class="form-check ml-2">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="si" value="si" checked>
+                      <label class="form-check-label" for="exampleRadios1">
+                          Si
+                      </label>
+                  </div>
+                  <div class="form-check ml-2">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="no" value="no">
+                      <label class="form-check-label" for="exampleRadios2">
+                          No
+                      </label>
+                  </div>
+              </div>
+
+              <div>
+                  <button type="submit" class="btn btn-primary">Buscar Empleo</button>
+              </div>
+          </form>
+
+
+          <br />
+          <br />
+
+
+          <div class="row p-3" id="results">
+
+
+          </div>
+
+          <div id="myModal"></div>
 
       </div>
 
